@@ -5,30 +5,32 @@
   Time: 15:13
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;"
+         pageEncoding="UTF-8"%>
 <%@ taglib uri="http://java.sun.com/jsp/jstl/core" prefix="c"%>
 <html>
-<title>Spring Boot MVC and Hibernate CRUD Example</title>
+<title>Directory</title>
 <body>
-<h2>Spring Boot MVC and Hibernate CRUD Example</h2>
+<h2>Directory</h2>
 <c:if test="${not empty msg}">
     ${msg}
 </c:if>
 <h3>Add Waste</h3>
 <form method="POST" name="add_waste"
       action="<%=request.getContextPath()%>/add/waste">
-    codeWaste: <input name="codeWaste" value="${codeWaste}" type="number" />
+    codeWaste: <input name="codeWaste" pattern="[0-9]{3,}"
+                      title="Field must contain at least 3 numbers" class="form-control input-md" required=""
+                      type="text" />
     <br /> <br />
-    nameWaste: <input name="nameWaste" value="${nameWaste}" type="text" />
+    nameWaste: <input name="nameWaste" required="" type="text" />
     <br /> <br />
-    degreeOfDanger: <input name="degreeOfDanger" value="${degreeOfDanger}" type="text" />
+    degreeOfDanger: <input name="degreeOfDanger"  required="" type="text" />
     <br /> <br />
-    hazardClass: <input name="hazardClass" value="${hazardClass}" type="text" />
+    hazardClass: <input name="hazardClass" required="" type="text" />
     <br /> <br />
-    kindOfActivity: <input name="kindOfActivity" value="${kindOfActivity}" type="text" />
+    kindOfActivity: <input name="kindOfActivity"  required="" type="text" />
     <br /> <br />
-    educationStandard: <input name="educationStandard" value="${educationStandard}" type="text" />
+    educationStandard: <input name="educationStandard" required="" type="text" />
     <br /> <br />
     <input value="Add Waste" type="submit" />
 </form>

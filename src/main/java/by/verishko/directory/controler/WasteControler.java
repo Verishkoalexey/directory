@@ -19,19 +19,19 @@ public class WasteControler {
     public String getWaste(@PathVariable long id, ModelMap wasteModel) {
         Waste waste = wasteRepo.getOne(id);
         wasteModel.addAttribute("waste", waste);
-        return "wastes";
+        return "wastes.jsp";
     }
 
     @GetMapping("/wastes")
     public String getWastes(ModelMap wasteModel) {
         List<Waste> wastes = wasteRepo.findAll();
         wasteModel.addAttribute("wastes", wastes);
-        return "wastes";
+        return "wastes.jsp";
     }
 
     @GetMapping("addWaste")
     public String addPage() {
-        return "add";
+        return "add.jsp";
     }
 
     @PostMapping("/add/waste")
@@ -53,7 +53,7 @@ public class WasteControler {
         wasteModel.addAttribute("msg", "Waste added successfully");
         List<Waste> wastes = wasteRepo.findAll();
         wasteModel.addAttribute("wastes", wastes);
-        return "wastes";
+        return "wastes.jsp";
     }
 
     @GetMapping("update/waste/{id}")
@@ -61,7 +61,7 @@ public class WasteControler {
         wasteModel.addAttribute("id", id);
         Waste waste = wasteRepo.getOne(id);
         wasteModel.addAttribute("waste", waste);
-        return "update";
+        return "update.jsp";
     }
 
     @PostMapping("/update/waste")
@@ -79,7 +79,7 @@ public class WasteControler {
         wasteModel.addAttribute("wastes", wastes);
         wasteModel.addAttribute("id", id);
         wasteModel.addAttribute("msg", "Waste updated successfully");
-        return "wastes";
+        return "wastes.jsp";
     }
 
     @GetMapping("/delete/waste/{id}")
@@ -88,6 +88,6 @@ public class WasteControler {
         List<Waste> wastes = wasteRepo.findAll();
         wasteModel.addAttribute("wastes", wastes);
         wasteModel.addAttribute("msg", "Waste delted successfully");
-        return "wastes";
+        return "wastes.jsp";
     }
 }

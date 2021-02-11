@@ -5,12 +5,12 @@
   Time: 15:10
   To change this template use File | Settings | File Templates.
 --%>
-<%@ page language="java" contentType="text/html; charset=ISO-8859-1"
-         pageEncoding="ISO-8859-1"%>
+<%@ page language="java" contentType="text/html;"
+         pageEncoding="UTF-8"%>
 <html>
-<title>Spring Boot MVC and Hibernate CRUD Example</title>
+<title>Directory</title>
 <body>
-<h2>Spring Boot MVC and Hibernate CRUD Example</h2>
+<h2>Directory</h2>
 Id : ${waste.id}
 <br /> codeWaste : ${waste.codeWaste}
 <br /> nameWaste : ${waste.nameWaste}

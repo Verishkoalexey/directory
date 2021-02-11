@@ -6,6 +6,7 @@ import javax.persistence.*;
 @Table
 public class Waste {
     @Id
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
     private int codeWaste;
     private String nameWaste;
@@ -19,15 +20,6 @@ public class Waste {
 
     public Waste(Long id, int codeWaste, String nameWaste, String degreeOfDanger, String hazardClass, String kindOfActivity, String educationStandard) {
         this.id = id;
-        this.codeWaste = codeWaste;
-        this.nameWaste = nameWaste;
-        this.degreeOfDanger = degreeOfDanger;
-        this.hazardClass = hazardClass;
-        this.kindOfActivity = kindOfActivity;
-        this.educationStandard = educationStandard;
-    }
-
-    public Waste(int codeWaste, String nameWaste, String degreeOfDanger, String hazardClass, String kindOfActivity, String educationStandard) {
         this.codeWaste = codeWaste;
         this.nameWaste = nameWaste;
         this.degreeOfDanger = degreeOfDanger;
